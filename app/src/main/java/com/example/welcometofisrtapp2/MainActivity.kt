@@ -2,22 +2,16 @@ package com.example.welcometofisrtapp2
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.app.Activity.RESULT_OK
-import android.app.appsearch.AppSearchResult.RESULT_OK
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
-import androidx.core.provider.FontsContractCompat.FontRequestCallback.RESULT_OK
-
-val signUpAct_requestCode = 0
-var email_inMain = ""
-var usernameInMain = ""
-var passwordInMain = ""
-
 
 class MainActivity : AppCompatActivity() {
+    val signUpAct_requestCode = 0
+    var email_inMain = ""
+    var usernameInMain = ""
+    var passwordInMain = ""
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         signupBtn.setOnClickListener {
             val intent = Intent(this, SignUp::class.java)
             startActivityForResult(intent, signUpAct_requestCode)
-
         }
 
         var loginBtn = findViewById<Button>(R.id.btn_login)
